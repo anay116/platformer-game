@@ -39,4 +39,3 @@ cat = sprites.create(img`
 controller.moveSprite(cat, 100, 0)
 tiles.setCurrentTilemap(tilemap`level1`)
 cat.ay = 200
-scene.cameraFollowSprite(cat)
