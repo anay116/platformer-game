@@ -2,14 +2,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, l
     game.gameOver(false)
     game.setGameOverEffect(false, effects.melt)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
-    game.gameOver(true)
-    game.setGameOverEffect(true, effects.smiles)
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cat.vy == 0) {
         cat.vy = -150
     }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite2, location2) {
+    game.gameOver(true)
+    game.setGameOverEffect(true, effects.smiles)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite3, location3) {
+    game.splash("WOW !")
 })
 let cat: Sprite = null
 game.splash("WELCOME TO PLATFORM RUNNER", "MAKE THE CAT ESCAPE FROM LAVA")
@@ -34,6 +37,6 @@ cat = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(cat, 100, 0)
-tiles.setCurrentTilemap(tilemap`level0`)
+tiles.setCurrentTilemap(tilemap`level1`)
 cat.ay = 200
 scene.cameraFollowSprite(cat)
